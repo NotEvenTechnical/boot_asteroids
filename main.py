@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 
 from constants import *
@@ -41,7 +43,7 @@ def main():
         for asteroid in asteroids:
             if asteroid.is_colliding( player ):
                 print ("Game over!")
-                return
+                sys.exit()
 
         # rendering
         screen.fill("black")

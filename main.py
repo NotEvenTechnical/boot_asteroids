@@ -17,18 +17,23 @@ def main():
     player = Player( x = SCREEN_WIDTH / 2 , y = SCREEN_HEIGHT / 2 )
 
     while True:
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
+        # update to the clock delta
+        player.update(dt)
+
+        # rendering
         screen.fill("black")
 
         player.draw(screen)
 
         pygame.display.flip()
 
+        # clock delta
         dt = ( clock.tick( 60 ) ) / 1000    # measure the dt in seconds
-        #moar stuff to all
 
 
 

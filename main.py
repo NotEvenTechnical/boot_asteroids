@@ -50,6 +50,11 @@ def main():
                 print ("Game over!")
                 sys.exit()
 
+            for bullet in shot_group:
+                if asteroid.is_colliding ( bullet ):
+                    asteroid.kill()
+                    bullet.kill()
+
         # rendering
         screen.fill("black")
 
